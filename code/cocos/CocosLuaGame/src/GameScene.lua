@@ -34,12 +34,20 @@ function GameScene:createLayerBack()
     layerBack:addChild(bg)
     
     --function1
-    local function button_click1()
+    local function button_click1_Begin()
+        return true
+    end
+    
+    local function button_click1_End()
         cc.Director:sharedDirector():endToLua()
     end
     
     --function2
-    local function button_click2()
+    local function button_click2_Begin()
+        return true
+    end
+    
+    local function button_click2_End()
         print("enter normal")
     end
     
@@ -53,10 +61,10 @@ function GameScene:createLayerBack()
     layerBack:addChild(menubutton1)
     
     local listener1 = cc.EventListenerTouchOneByOne:create()
-    listener1:registerScriptHandler(button_click1,cc.Handler.EVENT_TOUCH_BEGAN )
-    listener1:registerScriptHandler(button_click1,cc.Handler.EVENT_TOUCH_MOVED )
+    listener1:registerScriptHandler(button_click1_Begin,cc.Handler.EVENT_TOUCH_BEGAN )
+    listener1:registerScriptHandler(button_click1_End,cc.Handler.EVENT_TOUCH_ENDED )
     local eventDispatcher = layerBack:getEventDispatcher()
-    eventDispatcher:addEventListenerWithSceneGraphPriority(listener1, layerBack)
+    eventDispatcher:addEventListenerWithSceneGraphPriority(listener1, menubutton1)
     
     local menuItem2 = cc.MenuItemImage:create("button2.png", "button3.png")
     menuItem2:setPosition(self.origin.x + self.visibleSize.width / 2, self.origin.y + self.visibleSize.height / 2 - 280)
@@ -66,11 +74,11 @@ function GameScene:createLayerBack()
     menubutton2:setVisible(true)
     layerBack:addChild(menubutton2)
     
-    local listener = cc.EventListenerTouchOneByOne:create()
-    listener:registerScriptHandler(button_click2,cc.Handler.EVENT_TOUCH_BEGAN )
-    listener:registerScriptHandler(button_click2,cc.Handler.EVENT_TOUCH_MOVED )
+    local listener2 = cc.EventListenerTouchOneByOne:create()
+    listener2:registerScriptHandler(button_click2_Begin,cc.Handler.EVENT_TOUCH_BEGAN )
+    listener2:registerScriptHandler(button_click2_End,cc.Handler.EVENT_TOUCH_ENDED )
     local eventDispatcher = layerBack:getEventDispatcher()
-    eventDispatcher:addEventListenerWithSceneGraphPriority(listener, layerBack)
+    eventDispatcher:addEventListenerWithSceneGraphPriority(listener2, menubutton2)
     
     return layerBack
 end
