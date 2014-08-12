@@ -29,7 +29,6 @@ function RealGameScene:createLayerBack()
     local layerBack = cc.Layer:create()
     -- add in background
     local bg = cc.Sprite:create("realbg.jpg")
-    --bg:setPosition(self.origin.x + self.visibleSize.width / 2 + 80, self.origin.y + self.visibleSize.height / 2)
     bg:setPosition(self.origin.x + self.visibleSize.width / 2, self.origin.y + self.visibleSize.height / 2)
     layerBack:addChild(bg)
 

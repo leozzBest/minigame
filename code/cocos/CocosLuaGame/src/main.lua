@@ -22,7 +22,7 @@ local function main()
     
     cc.FileUtils:getInstance():addSearchPath("src")
     cc.FileUtils:getInstance():addSearchPath("res")
-    cc.Director:getInstance():getOpenGLView():setDesignResolutionSize( 1024,768, 1)
+    cc.Director:getInstance():getOpenGLView():setDesignResolutionSize( 768,1024, 0)
     --cc.Director:getInstance():set
     --cc.Director:getInstance():getOpenGLView():setDesignResolutionSize(480, 320, 0)
     
