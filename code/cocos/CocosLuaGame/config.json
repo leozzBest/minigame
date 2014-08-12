@@ -1,9 +1,9 @@
 {
   "init_cfg": {
-    "isLandscape": true,
+    "isLandscape": false,
     "name": "CocosLuaGame",
-    "width": 960,
-    "height": 640,
+    "width": 1024,
+    "height": 768,
     "entry": "src/main.lua",
     "consolePort": 6010,
     "debugPort": 0

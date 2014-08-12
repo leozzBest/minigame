@@ -48,6 +48,17 @@ function GameScene:createLayerBack()
     --end
     
     local function button_click2()
+        --create scene 
+        local scene = require("RealGameScene")
+        local gameScene = scene.create()
+        --scene.newScene()
+        gameScene:playBgMusic()
+
+        if cc.Director:getInstance():getRunningScene() then
+            cc.Director:getInstance():replaceScene(gameScene)
+        else
+            cc.Director:getInstance():runWithScene(gameScene)
+        end
         print("enter normal")
     end
     
