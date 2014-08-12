@@ -1,4 +1,3 @@
-
 require "Cocos2d"
 
 -- cclog
@@ -23,13 +22,15 @@ local function main()
     
     cc.FileUtils:getInstance():addSearchPath("src")
     cc.FileUtils:getInstance():addSearchPath("res")
-    cc.Director:getInstance():getOpenGLView():setDesignResolutionSize(480, 320, 0)
+    cc.Director:getInstance():getOpenGLView():setDesignResolutionSize(1024, 768, 0)
+    --cc.Director:getInstance():getOpenGLView():setDesignResolutionSize(480, 320, 0)
     
     --create scene 
     local scene = require("GameScene")
     local gameScene = scene.create()
+    --scene.newScene()
     gameScene:playBgMusic()
-    
+
     if cc.Director:getInstance():getRunningScene() then
         cc.Director:getInstance():replaceScene(gameScene)
     else
@@ -38,7 +39,7 @@ local function main()
 
 end
 
-
+--the enter
 local status, msg = xpcall(main, __G__TRACKBACK__)
 if not status then
     error(msg)
