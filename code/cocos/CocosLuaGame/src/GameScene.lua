@@ -49,7 +49,7 @@ function GameScene:createLayerBack()
     
     local function button_click2()
         --create scene 
-        local scene = require("RealGameScene")
+        local scene = require("NetScene")
         local gameScene = scene.create()
         --scene.newScene()
         gameScene:playBgMusic()
