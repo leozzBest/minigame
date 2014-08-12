@@ -41,6 +41,10 @@ function NetScene:createLayerBack()
         end
     end
     
+    local function joinGame()
+
+    end
+    
     local layerBack = cc.Layer:create()
     -- add in background
     local bg = cc.Sprite:create("netbg.png")
@@ -51,11 +55,28 @@ function NetScene:createLayerBack()
     netButton:setTouchEnabled(true)
     netButton:setPressedActionEnabled(true)
     netButton:loadTextures("netbutton.png", "netbutton.png", "")
-    netButton:setPosition(cc.p(self.origin.x + self.visibleSize.width / 2, self.origin.y + self.visibleSize.height / 2 - 160))
-    netButton:addTouchEventListener(gameStart)        
+    netButton:setPosition(cc.p(self.origin.x + self.visibleSize.width / 2, self.origin.y + self.visibleSize.height / 2 - 260))
+    netButton:addTouchEventListener(joinGame)        
     layerBack:addChild(netButton)
+    
+    local user1 = ccui.ImageView:create()
+    user1:loadTexture("orange-rooboo.png")
+    user1:setPosition(cc.p(200, 580))
+    layerBack:addChild(user1)
+    
+    local user2 = ccui.ImageView:create()
+    user2:loadTexture("green-rooboo.png")
+    user2:setPosition(cc.p(400, 600))
+    layerBack:addChild(user2)
+    
+    local user3 = ccui.ImageView:create()
+    user3:loadTexture("purple-rooboo.png")
+    user3:setPosition(cc.p(600, 570))
+    layerBack:addChild(user3)
     
     return layerBack
 end
+
+
 
 return NetScene
